@@ -1,4 +1,4 @@
-# ACHSAM KONTROL
+# ACHTSAM KONTROL
 
 CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 
@@ -45,12 +45,19 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 |`5`|CH 5    |`-`|MUTE CH 5|`[`|SOLO CH 5|
 |`6`|CH 6    |`=`|MUTE CH 6|`]`|SOLO CH 6|
 
+## Demo Video
+
+## Not Working
+- Not started without USB-C Power (After started, needs no more)
+- Could not stop during recording
+
 ## TODO
-- Key Macro
-- Sound
+- Macro Key
+- Achtsam Sound
 - Drone Mode  
 - Screensaver
 - Battery Status
 - Recording Status / Time
 - Blackmagic Cam Record Button
-  
+- Control Voltage support
+- LoRa message control support
