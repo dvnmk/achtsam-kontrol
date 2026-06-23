@@ -57,7 +57,7 @@ void loop()
       if (keys.del)
 	{
 	  M5.Speaker.tone(1000, 30);
-	  sendChar('\b'); rx = "BS";
+	  sendChar('\b'); tx = "BS"; rx = "BACKSPACE";
 	}
  
       for (auto c : keys.word)

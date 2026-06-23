@@ -3,50 +3,38 @@
 CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 
 ## Features
-- Wirerless control the Mixpre
-- Keyboard input mapping
-- ESP-NOW transmission
-- TX/RX display
+- Wirerless Control a Mixpre 6
+- Custom Keyinput Mapping
+- ESP-NOW Transmission
+- Keymapping Visualization
+- Keyinput Audio Feedback
 
 ## Hardware
-![Cardputer](img/foo.png)
+![Kontrol](img/foo.png)
 
-- M5Cardputer ADV
+- M5Cardputer ADV 
 - ATOMS3 Lite via ESP-NOW
 - Teensy LC as USB Keyboard
 
+## Cardputer Key | Mixpre Function
+| Key     | Function         | Key | Function      | Key  | Function  |
+|---------|------------------|-----|---------------|------|-----------|
+| `` ` `` | ESC              | `'` | ESC           | `BS` | BACKSPACE |
+| `\`     | MENU             |
+| `h`     | HOME             | `f` | FILE          | `v`  | VIEW      |
+| `z`     | FRONT PANEL LOCK | `x` | FILE TRANSFER |
+| `q`     | * SHORTCUT       |
 
-## Keymapping
-|Key        |Function        |
-|-----------|----------------|
-|`Enter`    |OK              |
-|`Backspace`|BS              |
-|`` ` ``    |ESC             |
-|`'`        |ESC             |
-|`\`        |MENU            |
-|`h`        |HOME            |
-|`f`        |FILE            |
-|`v`        |VIEW            |
-|`q`        |* SHORTCUT      |
-|`z`        |FRONT PANEL LOCK|
+| Key     | Function | Key | Function | Key | Function |
+|---------|----------|-----|----------|-----|----------|
+| `j`     | PLAY     | `k` | STOP     | `l` | RECORD   |
+| `Space` | PLAY     | `m` | CUE MARK |
 
-| Key     | Function      |
-| ------- | ------------- |
-| `Space` | PLAY          |
-| `j`     | PLAY          |
-| `k`     | STOP          |
-| `l`     | RECORD        |
-| `m`     | CUE MARK      |
-| `x`     | FILE TRANSFER |
-
-| Key | Function | Key | Function  |
-|-----|----------|-----|-----------|
-| `,` | LEFT     | `w` | Row 1 XOO |
-| `/` | RIGHT    | `e` | Row 1 OXO |
-| `;` | UP       | `r` | Row 1 OOX |
-| `.` | DOWN     | `a` | Row 2 XOO |
-|     |          | `s` | Row 2 OXO |
-|     |          | `d` | Row 2 OOX |
+| Key     | Key      | Key | Key        | Function | Key      | Function |
+|---------|----------|-----|------------|----------|----------|----------|
+| `w`     | `e`      | `r` | `,`        | LEFT     | `/`      | RIGHT    |
+| `a`     | `s`      | `d` | `;`        | UP       | `.`      | DOWN     |
+|         |          |     | `Enter`    | OK       |
 
 |Key|Function|Key|Function |Key|Function |
 |---|--------|---|---------|---|---------|
@@ -57,13 +45,12 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 |`5`|CH 5    |`-`|MUTE CH 5|`[`|SOLO CH 5|
 |`6`|CH 6    |`=`|MUTE CH 6|`]`|SOLO CH 6|
 
-## TODOs for you
+## TODO
 - Key Macro
 - Sound
+- Drone Mode  
 - Screensaver
 - Battery Status
-- Recording Status
-- Stopwatch
-- Drone Mode  
+- Recording Status / Time
 - Blackmagic Cam Record Button
   
