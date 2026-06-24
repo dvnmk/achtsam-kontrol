@@ -1,10 +1,10 @@
 # ACHTSAM KONTROL
 
-CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
+CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 
 ## Features
-- Wirerless Control a Mixpre 6
-- Custom Keyinput Mapping
+- Wirerless Control for Mixpre 6
+- Custom Key Mapping
 - ESP-NOW Transmission
 - Keymapping Visualization
 - Keyinput Audio Feedback
@@ -52,7 +52,7 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 ## Demo Video
 [![Watch Demo](https://img.youtube.com/vi/vre1-ek9nzU/maxresdefault.jpg)](https://www.youtube.com/watch?v=vre1-ek9nzU)
 
-## Known Issue
+## Known Issues
 - Currently requires USB-C power for device detection.
 - After startup, USB-C power can be disconnected.
 
