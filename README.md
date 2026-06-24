@@ -8,6 +8,8 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 - ESP-NOW Transmission
 - Keymapping Visualization
 - Keyinput Audio Feedback
+- Achtsam Ergonomisch Layout
+- No need to press Modifier keys
 
 ## Hardware
 ![Kontrol](img/foo.png)
@@ -16,25 +18,27 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 - ATOMS3 Lite via ESP-NOW
 - Teensy LC as USB Keyboard
 
+![Achtsam-Kontrol](img/achtsam-kontrol.png)
+
 ## Cardputer Key | Mixpre Function
 | Key     | Function         | Key | Function      | Key  | Function  |
 |---------|------------------|-----|---------------|------|-----------|
 | `` ` `` | ESC              | `'` | ESC           | `BS` | BACKSPACE |
-| `\`     | MENU             |
+| `q`     | * SHORTCUT       | `\` | MENU          |
 | `h`     | HOME             | `f` | FILE          | `v`  | VIEW      |
 | `z`     | FRONT PANEL LOCK | `x` | FILE TRANSFER |
-| `q`     | * SHORTCUT       |
 
-| Key     | Function | Key | Function | Key | Function |
-|---------|----------|-----|----------|-----|----------|
-| `j`     | PLAY     | `k` | STOP     | `l` | RECORD   |
-| `Space` | PLAY     | `m` | CUE MARK |
 
-| Key     | Key      | Key | Key        | Function | Key      | Function |
-|---------|----------|-----|------------|----------|----------|----------|
-| `w`     | `e`      | `r` | `,`        | LEFT     | `/`      | RIGHT    |
-| `a`     | `s`      | `d` | `;`        | UP       | `.`      | DOWN     |
-|         |          |     | `Enter`    | OK       |
+| Key | Function | Key | Function | Key     | Function |
+|-----|----------|-----|----------|---------|----------|
+| `j` | PLAY     | `k` | STOP     | `l`     | RECORD   |
+|     |          | `m` | CUE MARK | `SPC` | PLAY     |
+
+| Key | Key | Key | Key   | Function | Key | Function |
+|-----|-----|-----|-------|----------|-----|----------|
+| `w` | `e` | `r` | `,`   | LEFT     | `/` | RIGHT    |
+| `a` | `s` | `d` | `;`   | UP       | `.` | DOWN     |
+|     |     |     | `ENT` | OK       |
 
 |Key|Function|Key|Function |Key|Function |
 |---|--------|---|---------|---|---------|
@@ -47,11 +51,11 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 
 ## Demo Video
 
-## Not Working
-- Not started without USB-C Power (After started, needs no more)
-- Could not stop during recording
+## Known Issue
+- Currently requires USB-C power for device detection.
+- After startup, USB-C power can be disconnected.
 
-## TODO
+## ToDo
 - Macro Key
 - Achtsam Sound
 - Drone Mode  

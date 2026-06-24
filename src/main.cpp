@@ -132,7 +132,7 @@ void loop()
 	}
       else
 	{
-	  M5Cardputer.Display.printf("%s ->a", tx.c_str());
+	  M5Cardputer.Display.printf("%s", tx.c_str());
 	}
     }
 }
