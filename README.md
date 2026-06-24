@@ -50,7 +50,7 @@ CARDPUTER -> ATOMS3 LITE -> TEESNY LC -> MIXPRE
 |`6`|CH 6    |`=`|MUTE CH 6|`]`|SOLO CH 6|
 
 ## Demo Video
-[Watch on YouTube](https://www.youtube.com/watch?v=vre1-ek9nzU)
+[![Watch Demo](https://img.youtube.com/vi/vre1-ek9nzU/maxresdefault.jpg)](https://www.youtube.com/watch?v=vre1-ek9nzU)
 
 ## Known Issue
 - Currently requires USB-C power for device detection.
