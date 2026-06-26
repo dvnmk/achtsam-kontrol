@@ -4,6 +4,8 @@
 
 uint8_t receiverMAC[] =  {0xAC, 0xA7, 0x04, 0x00, 0x3E, 0xE0};
 
+bool backlight = true;
+
 void sendChar(char c)
 {
   esp_now_send(receiverMAC, (uint8_t *)&c, 1);
@@ -43,6 +45,16 @@ String rx = "";
 void loop()
 {
   M5Cardputer.update();
+
+  if (M5.BtnA.wasPressed()) {   // Btn0
+    backlight = !backlight;
+
+    if (backlight) {
+      M5.Display.setBrightness(255);
+    } else {
+      M5.Display.setBrightness(0);
+    }
+  }
 
   if (M5Cardputer.Keyboard.isChange())
     {

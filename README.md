@@ -49,6 +49,8 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 |`5`|CH 5    |`-`|MUTE CH 5|`[`|SOLO CH 5|
 |`6`|CH 6    |`=`|MUTE CH 6|`]`|SOLO CH 6|
 
+| BTN G0 | Backlight ON/OFF |
+
 ## Demo Video
 [![Watch Demo](https://img.youtube.com/vi/vre1-ek9nzU/maxresdefault.jpg)](https://www.youtube.com/watch?v=vre1-ek9nzU)
 
@@ -66,3 +68,6 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Blackmagic Cam Record Button
 - Control Voltage support
 - LoRa message control support
+- Record Location via GPS
+- Control Automation
+- Text input modesa
