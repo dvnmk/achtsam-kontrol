@@ -4,7 +4,8 @@
 
 uint8_t receiverMAC[] =  {0xAC, 0xA7, 0x04, 0x00, 0x3E, 0xE0};
 
-bool backlight = true;
+uint8_t brightnessLevels[5] = {0, 30, 100, 200, 255};
+uint8_t currentBrightnessIndex = 4;
 
 void sendChar(char c)
 {
@@ -15,7 +16,8 @@ void setup()
 {
   auto cfg = M5.config();
   M5Cardputer.begin(cfg);
-  M5.Display.setBrightness(76);
+  //M5.Display.setBrightness(76);
+  M5Cardputer.Display.setBrightness(brightnessLevels[currentBrightnessIndex]);
   
   WiFi.mode(WIFI_STA);
   if (esp_now_init() != ESP_OK) {
@@ -44,19 +46,24 @@ String rx = "";
 const unsigned long DEBOUNCE_DELAY = 200; 
 unsigned long lastButtonPress = 0;
 
+
+void toggleBrightness() {
+  currentBrightnessIndex++;
+  if (currentBrightnessIndex >= 5) {
+    currentBrightnessIndex = 0;
+  }
+  uint8_t brightness = brightnessLevels[currentBrightnessIndex];
+  M5Cardputer.Display.setBrightness(brightness);
+}
+
 void loop()
 {
   M5Cardputer.update();
 
   if (M5.BtnA.wasPressed()) {   // Btn0
-    backlight = !backlight;
-
-    if (backlight) {
-      M5.Display.setBrightness(76);
-    } else {
-      M5.Display.setBrightness(0);
-    }
+    toggleBrightness();
   }
+  
 
   if (M5Cardputer.Keyboard.isChange() &&
       millis() - lastButtonPress > DEBOUNCE_DELAY)
@@ -158,3 +165,4 @@ void loop()
 	}
     }
 }
+
