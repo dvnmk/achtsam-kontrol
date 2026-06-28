@@ -49,6 +49,8 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 |`5`|CH 5    |`-`|MUTE CH 5|`[`|SOLO CH 5|
 |`6`|CH 6    |`=`|MUTE CH 6|`]`|SOLO CH 6|
 
+| Key    | Function         |
+|--------|------------------|-------|
 | BTN G0 | Backlight ON/OFF |
 
 ## Demo Video
@@ -71,3 +73,5 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Record Location via GPS
 - Control Automation
 - Text input modesa
+- Battery Status
+

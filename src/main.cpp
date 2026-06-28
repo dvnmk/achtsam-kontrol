@@ -41,6 +41,8 @@ void setup()
 
 String tx = "";
 String rx = "";
+const unsigned long DEBOUNCE_DELAY = 200; 
+unsigned long lastButtonPress = 0;
 
 void loop()
 {
@@ -50,13 +52,14 @@ void loop()
     backlight = !backlight;
 
     if (backlight) {
-      M5.Display.setBrightness(255);
+      M5.Display.setBrightness(76);
     } else {
       M5.Display.setBrightness(0);
     }
   }
 
-  if (M5Cardputer.Keyboard.isChange())
+  if (M5Cardputer.Keyboard.isChange() &&
+      millis() - lastButtonPress > DEBOUNCE_DELAY)
     {
       auto keys = M5Cardputer.Keyboard.keysState();
  
@@ -132,6 +135,13 @@ void loop()
 	    case 'q':	      rx = "* SHORTCUT";      break;
 	    case 'z':	      rx = "FRONT PANEL";     break;	      	      
 
+	    case 'b': {
+	      // Show battery status
+	      float batt = M5.Power.getBatteryLevel();
+	      rx = "BAT " + String(batt) + "%";
+	      break;
+	    }
+	    
 	    default:	      rx = String(c);	      break;
 	    }
 	}
