@@ -76,4 +76,6 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Control Automation
 - Text input mode
 
+## License
 
+[MIT](LICENSE)
