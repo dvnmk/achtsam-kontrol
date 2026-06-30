@@ -1,9 +1,9 @@
 # ACHTSAM KONTROL
 
-CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
+WIRERLESS CONTROLLER FOR MIXPRE
 
 ## Features
-- Wirerless Control for Mixpre 6
+- Wirerless Control for Mixpre
 - Custom Key Mapping
 - ESP-NOW Transmission
 - Keymapping Visualization
@@ -14,6 +14,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 ## Hardware
 ![Kontrol](img/foo.png)
 
+CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - M5Cardputer ADV 
 - ATOMS3 Lite via ESP-NOW
 - Teensy LC as USB Keyboard
@@ -24,21 +25,21 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 | Key     | Function         | Key | Function      | Key  | Function  |
 |---------|------------------|-----|---------------|------|-----------|
 | `` ` `` | ESC              | `'` | ESC           | `BS` | BACKSPACE |
-| `q`     | * SHORTCUT       | `\` | MENU          |
-| `h`     | HOME             | `f` | FILE          | `v`  | VIEW      |
-| `z`     | FRONT PANEL LOCK | `x` | FILE TRANSFER |
+| `q`     | * SHORTCUT       | `\` | MENU          |      |           |
+| `h`     | HOME             | `f` | FILE          |      |           |
+| `z`     | FRONT PANEL LOCK | `x` | FILE TRANSFER | `v`  | VIEW      |
 
 
-| Key | Function | Key | Function | Key     | Function |
-|-----|----------|-----|----------|---------|----------|
-| `j` | PLAY     | `k` | STOP     | `l`     | RECORD   |
+| Key | Function | Key | Function | Key   | Function |
+|-----|----------|-----|----------|-------|----------|
+| `j` | PLAY     | `k` | STOP     | `l`   | RECORD   |
 |     |          | `m` | CUE MARK | `SPC` | PLAY     |
 
 | Key | Key | Key | Key   | Function | Key | Function |
 |-----|-----|-----|-------|----------|-----|----------|
 | `w` | `e` | `r` | `,`   | LEFT     | `/` | RIGHT    |
 | `a` | `s` | `d` | `;`   | UP       | `.` | DOWN     |
-|     |     |     | `ENT` | OK       |
+|     |     |     | `ENT` | OK       |     |          |
 
 |Key|Function|Key|Function |Key|Function |
 |---|--------|---|---------|---|---------|
@@ -64,7 +65,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 ## ToDo
 - Macro Key
 - Achtsam Sound
-- Drone Mode  
+- Drone Mode
 - ~~Screensaver -> Brightness Kontrol~~
 - ~~Battery Status~~
 - Recording Status / Time
@@ -73,6 +74,6 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - LoRa message control support
 - Record Location via GPS
 - Control Automation
-- Text input modesa
+- Text input mode
 
 
