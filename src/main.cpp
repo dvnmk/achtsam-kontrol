@@ -2,10 +2,9 @@
 #include <WiFi.h>
 #include <esp_now.h>
 
-uint8_t receiverMAC[] =  {0xAC, 0xA7, 0x04, 0x00, 0x3E, 0xE0};
-
+uint8_t receiverMAC[] = { 0xE8, 0x3D, 0xC1, 0x94, 0x58, 0xAC};
 uint8_t brightnessLevels[5] = {0, 30, 100, 200, 255};
-uint8_t currentBrightnessIndex = 4;
+uint8_t currentBrightnessIndex = 2;
 
 void sendChar(char c)
 {
