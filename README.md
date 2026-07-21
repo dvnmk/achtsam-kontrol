@@ -63,6 +63,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - After startup, USB-C power can be disconnected.
 
 ## ToDo
+- Slate input to Mixpre
 - Macro Key
 - Achtsam Sound
 - Drone Mode

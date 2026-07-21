@@ -22,9 +22,8 @@ void onReceive(
 void setup()
 {
     Serial.begin(115200);
-    // RX=-1, TX=GPIO6
+    // RX disabled, TX=GPIO6
     Link.begin(115200, SERIAL_8N1, -1, 6);
-		delay(2000); // Let Teensy enumerate first
     WiFi.mode(WIFI_STA);
     Serial.print("MAC: ");
     Serial.println(WiFi.macAddress());
