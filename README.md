@@ -77,6 +77,15 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Control Automation
 - Text input mode
 
+'''
+           Cardputer
+        ┌──────────────┐
+        │ UI           │
+        │ ESP-NOW TX   │──────────► ESP32 Receiver ── USB HID ──► MixPre
+        │ BLE HID      │──────────► iPhone (Blackmagic Camera)
+        └──────────────┘
+'''		
+		
 ## License
 
 [MIT](LICENSE)
