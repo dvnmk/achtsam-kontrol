@@ -81,8 +81,8 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
            Cardputer
         ┌──────────────┐
         │ UI           │
-        │ ESP-NOW TX   │──────────► ESP32 Receiver ── USB HID ──► MixPre
-        │ BLE HID      │──────────► iPhone (Blackmagic Camera)
+        │ ESP-NOW TX   │───► ESP32 Receiver ── USB HID ──► MixPre
+        │ BLE HID      │───► iPhone (Blackmagic Camera)
         └──────────────┘
 ```
 		
