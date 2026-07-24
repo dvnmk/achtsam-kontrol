@@ -65,10 +65,11 @@ void loop()
   
 
   if (M5Cardputer.Keyboard.isChange() &&
-      millis() - lastButtonPress > DEBOUNCE_DELAY)
-    {
-      auto keys = M5Cardputer.Keyboard.keysState();
- 
+      millis() - lastButtonPress > DEBOUNCE_DELAY) {
+    lastButtonPress = millis();
+
+  auto keys = M5Cardputer.Keyboard.keysState();
+
       if (keys.enter)
 	{
 	  M5.Speaker.tone(1000, 30);
