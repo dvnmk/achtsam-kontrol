@@ -1,6 +1,9 @@
 #include <M5Cardputer.h>
 #include <WiFi.h>
 #include <esp_now.h>
+#include <HijelHID_BLEKeyboard.h>
+
+HijelHID_BLEKeyboard bleKeyboard("BMC Controller", "ACHTSAM", 100);
 
 uint8_t receiverMAC[] = { 0xE8, 0x3D, 0xC1, 0x94, 0x58, 0xAC};
 uint8_t brightnessLevels[5] = {0, 30, 100, 200, 255};
@@ -11,8 +14,12 @@ void sendChar(char c)
   esp_now_send(receiverMAC, (uint8_t *)&c, 1);
 }
 
+bool recording = false;
+
 void setup()
 {
+  Serial.begin(115200);
+  delay(300);
   auto cfg = M5.config();
   M5Cardputer.begin(cfg);
   //M5.Display.setBrightness(76);
@@ -34,6 +41,14 @@ void setup()
     while (1);
   }
 
+  // After WiFi.mode(), esp_now_init(), and esp_now_add_peer() succeed:
+  bleKeyboard.setSecurityMode(HIDSecurity::JustWorks);
+  bleKeyboard.setLogLevel(HIDLogLevel::Normal);
+  bleKeyboard.begin();
+  delay(1000);
+  Serial.printf("Bond saved: %s\n",
+		bleKeyboard.isBonded() ? "YES" : "NO");
+ 
   M5Cardputer.Display.fillScreen(BLACK);
   M5Cardputer.Display.setTextSize(2);
   M5Cardputer.Display.setCursor(10, 10);
@@ -84,12 +99,47 @@ void loop()
  
       for (auto c : keys.word)
 	{
+
+	  if (c == 'c') {
+	    M5.Speaker.tone(1000, 30);
+
+	    if (recording) {
+	      sendChar('k');      // Teensy: STOP
+	      tx = "c";
+	      rx = "STOP";
+	    } else {
+	      sendChar('l');      // Teensy: RECORD
+	      tx = "c";
+	      rx = "RECORD";
+	    }
+
+	    if (bleKeyboard.isPaired()) {
+	      bleKeyboard.tap(MEDIA_VOLUME_UP, 80, 50);
+	    }
+
+	    recording = !recording;
+	    continue;             // prevents sendChar('c')
+	  }
+ 
+	  
 	  M5.Speaker.tone(1000, 30);
 	  sendChar(c);
 	  tx = String(c);
 
 	  switch (c)
 	    {
+
+	    case 'c':
+	      if (bleKeyboard.isPaired()) {
+		bleKeyboard.tap(MEDIA_VOLUME_UP, 80, 50);
+		tx = "REC-REC";
+		rx = "RECORD";
+	      } else {
+		tx = "+";
+		rx = "BLE NOT CONNECTED";
+	      }
+	      break;
+  
 	    case '`':	      rx = "ESC";	      break;
 	    case '\'':	      rx = "ESC";	      break;	      
 	    case '\\':	      rx = "MENU";	      break;
