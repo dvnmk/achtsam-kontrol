@@ -102,26 +102,21 @@ void loop()
 
 	  if (c == 'c') {
 	    M5.Speaker.tone(1000, 30);
-
 	    if (recording) {
 	      sendChar('k');      // Teensy: STOP
 	      tx = "c";
-	      rx = "STOP";
+	      rx = "STOP-STOP";
 	    } else {
 	      sendChar('l');      // Teensy: RECORD
 	      tx = "c";
-	      rx = "RECORD";
+	      rx = "RECORD-RECORD";
 	    }
-
 	    if (bleKeyboard.isPaired()) {
 	      bleKeyboard.tap(MEDIA_VOLUME_UP, 80, 50);
 	    }
-
 	    recording = !recording;
 	    continue;             // prevents sendChar('c')
 	  }
- 
-	  
 	  M5.Speaker.tone(1000, 30);
 	  sendChar(c);
 	  tx = String(c);
@@ -129,17 +124,6 @@ void loop()
 	  switch (c)
 	    {
 
-	    case 'c':
-	      if (bleKeyboard.isPaired()) {
-		bleKeyboard.tap(MEDIA_VOLUME_UP, 80, 50);
-		tx = "REC-REC";
-		rx = "RECORD";
-	      } else {
-		tx = "+";
-		rx = "BLE NOT CONNECTED";
-	      }
-	      break;
-  
 	    case '`':	      rx = "ESC";	      break;
 	    case '\'':	      rx = "ESC";	      break;	      
 	    case '\\':	      rx = "MENU";	      break;
@@ -204,6 +188,8 @@ void loop()
 	}
       
       M5Cardputer.Display.fillRect(0, 30, 320, 120, BLACK);
+      // Always reset normal text to white first
+      M5Cardputer.Display.setTextColor(WHITE, BLACK);
       M5Cardputer.Display.setCursor(10, 50);
       if (rx.length() > 0)
 	{
@@ -213,6 +199,13 @@ void loop()
 	{
 	  M5Cardputer.Display.printf("%s", tx.c_str());
 	}
-    }
+
+      if (recording) {
+	M5Cardputer.Display.setTextColor(RED, BLACK);
+	M5Cardputer.Display.setCursor(10, 82);
+	M5Cardputer.Display.print("REC");
+	M5Cardputer.Display.fillCircle(52, 87, 5, RED);
+      } 
+  }
 }
 

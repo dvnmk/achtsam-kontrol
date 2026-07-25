@@ -54,6 +54,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 |--------|-----------------------------------------------|
 | BTN G0 | brightnessLevels[5] = {0, 30, 100, 200, 255}; |
 | b      | Battery Status                                |
+| c      | Mixpre, iPhone REC/STOP Toggle                |
 
 ## Demo Video
 [![Watch Demo](https://img.youtube.com/vi/vre1-ek9nzU/maxresdefault.jpg)](https://www.youtube.com/watch?v=vre1-ek9nzU)
@@ -70,7 +71,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - ~~Screensaver -> Brightness Kontrol~~
 - ~~Battery Status~~
 - Recording Status / Time
-- Blackmagic Cam Record Button
+- ~~Blackmagic Cam Record Button~~
 - Control Voltage support
 - LoRa message control support
 - Record Location via GPS
