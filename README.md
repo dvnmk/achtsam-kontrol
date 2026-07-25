@@ -74,7 +74,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Drone Mode
 - ~~Screensaver -> Brightness Kontrol~~
 - ~~Battery Status~~
-- Recording Status / Time
+- ~~Recording Status / Time~~
 - ~~Blackmagic Cam Record Button~~
 - Control Voltage support
 - LoRa message control support
