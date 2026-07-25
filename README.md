@@ -20,6 +20,9 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Teensy LC as USB Keyboard
 
 ![Achtsam-Kontrol](img/achtsam-kontrol.png)
+- Smaller setup w/ ESP32-C3 on Teensy LC
+![C3](img/ESP32-C3_SuperMini.png)
+
 
 ## Cardputer Key | Mixpre Function
 | Key     | Function         | Key | Function      | Key  | Function  |

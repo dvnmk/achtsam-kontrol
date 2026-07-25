@@ -15,6 +15,8 @@ void sendChar(char c)
 }
 
 bool recording = false;
+unsigned long recordingStartedAt = 0;
+unsigned long lastRecordingTimerDraw = 0;
 
 void setup()
 {
@@ -70,6 +72,21 @@ void toggleBrightness() {
   M5Cardputer.Display.setBrightness(brightness);
 }
 
+void drawRecordingStatus() {
+  M5Cardputer.Display.fillRect(0, 75, 180, 25, BLACK);
+
+  if (!recording) return;
+
+  unsigned long elapsed = (millis() - recordingStartedAt) / 1000;
+  unsigned long minutes = elapsed / 60;
+  unsigned long seconds = elapsed % 60;
+
+  M5Cardputer.Display.setTextColor(RED, BLACK);
+  M5Cardputer.Display.setCursor(10, 82);
+  M5Cardputer.Display.printf("REC %02lu:%02lu", minutes, seconds);
+  M5Cardputer.Display.fillCircle(145, 87, 5, RED);
+}
+
 void loop()
 {
   M5Cardputer.update();
@@ -109,7 +126,9 @@ void loop()
 	    } else {
 	      sendChar('l');      // Teensy: RECORD
 	      tx = "c";
-	      rx = "RECORD-RECORD";
+	      rx = "REC-REC";
+	      recordingStartedAt = millis();
+	      lastRecordingTimerDraw = 0;
 	    }
 	    if (bleKeyboard.isPaired()) {
 	      bleKeyboard.tap(MEDIA_VOLUME_UP, 80, 50);
@@ -201,11 +220,14 @@ void loop()
 	}
 
       if (recording) {
-	M5Cardputer.Display.setTextColor(RED, BLACK);
-	M5Cardputer.Display.setCursor(10, 82);
-	M5Cardputer.Display.print("REC");
-	M5Cardputer.Display.fillCircle(52, 87, 5, RED);
+	drawRecordingStatus();
       } 
   }
+
+if (recording && millis() - lastRecordingTimerDraw >= 1000) {
+  lastRecordingTimerDraw = millis();
+  drawRecordingStatus();
+}
+ 
 }
 
