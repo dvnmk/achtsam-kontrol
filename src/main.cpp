@@ -2,12 +2,13 @@
 #include <WiFi.h>
 #include <esp_now.h>
 #include <HijelHID_BLEKeyboard.h>
+#include <esp_wifi.h>
 
 HijelHID_BLEKeyboard bleKeyboard("BMC Controller", "ACHTSAM", 100);
 
 uint8_t receiverMAC[] = { 0xE8, 0x3D, 0xC1, 0x94, 0x58, 0xAC};
 uint8_t brightnessLevels[5] = {0, 30, 100, 200, 255};
-uint8_t currentBrightnessIndex = 2;
+uint8_t currentBrightnessIndex = 1;
 
 void sendChar(char c)
 {
@@ -28,6 +29,9 @@ void setup()
   M5Cardputer.Display.setBrightness(brightnessLevels[currentBrightnessIndex]);
   
   WiFi.mode(WIFI_STA);
+  //WiFi.setChannel(6, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_channel(6, WIFI_SECOND_CHAN_NONE);
+  
   if (esp_now_init() != ESP_OK) {
     Serial.println("ESP-NOW init failed");
     while (1);
@@ -35,7 +39,7 @@ void setup()
 
   esp_now_peer_info_t peerInfo = {};
   memcpy(peerInfo.peer_addr, receiverMAC, 6);
-  peerInfo.channel = 0;
+  peerInfo.channel = 6;
   peerInfo.encrypt = false;
 
   if (esp_now_add_peer(&peerInfo) != ESP_OK) {

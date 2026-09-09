@@ -1,5 +1,6 @@
 #include <WiFi.h>
 #include <esp_now.h>
+#include <esp_wifi.h>
 
 HardwareSerial Link(1);
 
@@ -25,6 +26,8 @@ void setup()
     // RX disabled, TX=GPIO6
     Link.begin(115200, SERIAL_8N1, -1, 6);
     WiFi.mode(WIFI_STA);
+		esp_wifi_set_channel(6, WIFI_SECOND_CHAN_NONE);
+
     Serial.print("MAC: ");
     Serial.println(WiFi.macAddress());
 
