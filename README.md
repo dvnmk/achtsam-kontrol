@@ -81,6 +81,7 @@ CARDPUTER -> ATOMS3 LITE -> TEENSY LC -> MIXPRE
 - Record Location via GPS
 - Control Automation
 - Text input mode
+- BPM Clock CV output
 
 ```
            Cardputer
